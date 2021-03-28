@@ -2,6 +2,7 @@ import Vue from 'vue'
 import Router from 'vue-router'
 import { interopDefault } from './utils'
 
+const _cf10bc82 = () => interopDefault(import('..\\pages\\post\\_id.vue' /* webpackChunkName: "pages_post__id" */))
 const _58a78912 = () => interopDefault(import('..\\pages\\index.vue' /* webpackChunkName: "pages_index" */))
 
 Vue.use(Router)
@@ -65,6 +66,10 @@ export function createRouter() {
     scrollBehavior,
 
     routes: [{
+      path: "/post/:id?",
+      component: _cf10bc82,
+      name: "post-id"
+    }, {
       path: "/",
       component: _58a78912,
       name: "index"

@@ -44,7 +44,10 @@
         </main>
 
         <footer>
-         <app-comment-form />
+         <app-comment-form 
+         @created = "createCommentHandler"
+         v-if="canAdComment"
+         />
 
             <div class="comments" v-if="true">
                 <app-Comment 
@@ -71,11 +74,22 @@ export default {
     validate({params}){
       return  Boolean( params.id)
     },
+    data() {
+        return{
+            canAdComment: true,
+        }
+    },
     components:{
         AppComment,
         AppCommentForm
 
 
+    },
+    methods:{
+        createCommentHandler(){
+            this.canAdComment = false
+            
+        }
     }
 }
 </script>

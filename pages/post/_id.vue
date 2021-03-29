@@ -28,7 +28,7 @@
                 >
             </div>
         </header>
-        <main class='post-contant'>
+        <main class='post-content'>
             <p>Lorem ipsum dolor sit 
                 amet consectetur, adipisicing elit. 
                 Similique totam quisquam eveniet odit a 
@@ -44,7 +44,8 @@
         </main>
 
         <footer>
-            <!-- form -->
+         <app-comment-form />
+
             <div class="comments" v-if="true">
                 <app-Comment 
                 v-for="comment in 4"
@@ -65,12 +66,16 @@
 
 <script>
 import AppComment from '@/components/main/Coment'
+import AppCommentForm from '@/components/main/CommentForm'
 export default {
     validate({params}){
       return  Boolean( params.id)
     },
     components:{
-        AppComment
+        AppComment,
+        AppCommentForm
+
+
     }
 }
 </script>
